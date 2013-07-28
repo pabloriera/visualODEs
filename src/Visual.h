@@ -9,6 +9,28 @@
 #ifndef visualODEs_Visual_h
 #define visualODEs_Visual_h
 
+#include "Pelota.h"
+
+
+class Visual{
+
+
+public:
+    
+    Visual(){
+    
+    }
+    
+    void displayPelotas(Pelota *pelotas, int total);
+    
+
+
+
+
+
+
+
+};
 
 
 #endif

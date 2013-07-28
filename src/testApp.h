@@ -3,6 +3,7 @@
     #include "ofMain.h"
     #include "Pelota.h"
     #include "ofxOsc.h"
+    #include "Visual.h"
 
     // listen on port 12345
     #define PORT 8000

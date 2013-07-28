@@ -7,3 +7,11 @@
 //
 
 #include "Visual.h"
+
+void Visual::displayPelotas(Pelota *pelotas, int total){
+
+
+
+
+
+}
