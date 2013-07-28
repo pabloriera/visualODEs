@@ -11,7 +11,6 @@
 
 #include "Pelota.h"
 
-
 class Visual{
 
 
@@ -20,6 +19,7 @@ public:
     Visual(){
     
     }
+    void setup();
     
     void displayPelotas(Pelota *pelotas, int total);
     
