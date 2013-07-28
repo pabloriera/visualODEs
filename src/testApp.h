@@ -3,6 +3,7 @@
     #include "ofMain.h"
     #include "Pelota.h"
     #include "ofxOsc.h"
+    #include "Visual.h"
 
     // listen on port 12345
     #define PORT 8000
@@ -30,4 +31,6 @@
             float a1,a2,b1,b2,c1,c2,d1,d2,e1,e2,tau1,tau2;
 
             ofxOscReceiver receiver;
+        
+            Visual visual;
     };

@@ -26,6 +26,8 @@
 
         receiver.setup(PORT);
         cout <<"b"<< endl;
+        
+        visual.setup();
 
 
     }
@@ -106,9 +108,13 @@
 
     void testApp::draw(){
         ofBackground(0);
-
+        
+        /*
         for(int i = 0; i < TOTAL; i++)
             p[i].draw();
+         */
+        
+        visual.displayPelotas(p, TOTAL);
     }
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
