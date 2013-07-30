@@ -10,23 +10,8 @@
          //cout << "hola2"<< endl;
         ofSetFrameRate(100);
 
-        for(int i = 0; i < TOTAL; i++)
-        {
-            p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
-             // cout <<i<< endl;
-        }
 
-        a1 = -1;a2 = -1;
-        b1 = 0; b2 = 0;
-        tau1 = 1; tau2 = 1;
 
-        tiempo = 0;
-
-        cout <<"a"<< endl;
-
-        receiver.setup(PORT);
-        cout <<"b"<< endl;
-        
         visual.setup();
 
 
@@ -108,12 +93,12 @@
 
     void testApp::draw(){
         ofBackground(0);
-        
+
         /*
         for(int i = 0; i < TOTAL; i++)
             p[i].draw();
          */
-        
+
         visual.displayPelotas(p, TOTAL);
     }
 //--------------------------------------------------------------

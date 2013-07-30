@@ -1,9 +1,9 @@
 #pragma once
 
     #include "ofMain.h"
-    #include "Pelota.h"
+    #include "Particle.h"
     #include "ofxOsc.h"
-    #include "Visual.h"
+    #include "Visualization.h"
 
     // listen on port 12345
     #define PORT 8000
@@ -26,11 +26,13 @@
             void dragEvent(ofDragInfo dragInfo);
             void gotMessage(ofMessage msg);
 
-            Pelota p[TOTAL];
+
+            Particle_System system;
+
             int tiempo;
             float a1,a2,b1,b2,c1,c2,d1,d2,e1,e2,tau1,tau2;
 
             ofxOscReceiver receiver;
-        
-            Visual visual;
+
+            Visualization visual;
     };
