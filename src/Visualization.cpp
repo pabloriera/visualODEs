@@ -8,19 +8,19 @@
 
 #include "Visualization.h"
 
-void Visualization::setup(){
+void Visualization::setup(Particle_System* _system ){
 
+    system = *_system;
     ofEnableBlendMode(OF_BLENDMODE_ADD);
-
 }
 
 
-void Visualization::displayPelotas(Particle *particles, int total){
+void Visualization::displayParticles(){
 
 
-    for(int i=0; i<total;i++){
+    for(size_t i=0; i<system.N_particles;i++){
 
-        int rc = ofMap(i, 0, total, 0, 255);
+        int rc = ofMap(i, 0, system.N_particles, 0, 255);
         int gc = 50;
         int bc = 100;
 
@@ -28,13 +28,8 @@ void Visualization::displayPelotas(Particle *particles, int total){
         ofSetColor(rc, gc, bc, 100);
 
 
-        ofCircle((particles[i].pos.x+2)/4*ofGetWindowWidth(), (particles[i].pos.y+2)/4*ofGetWindowHeight(),10+(i%20)*2);
-
-
+        ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),10+(i%20)*2);
 
     }
-
-
-
 
 }

@@ -9,26 +9,20 @@
 #ifndef visualODEs_VISUALIZATION_h
     #define visualODEs_VISUALIZATION_h
 
-#include "Particle.h"
+#include "Particle_System.h"
 
 class Visualization{
 
 
 public:
 
-    Visualization(){
+    Visualization(){ }
 
-    }
-    void setup();
+    void setup(Particle_System* _system);
 
-    void displayPelotas(Particle *particles, int total);
+    void displayParticles();
 
-
-
-
-
-
-
+    Particle_System system;
 
 };
 

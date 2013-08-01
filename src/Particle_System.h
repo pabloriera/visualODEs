@@ -8,16 +8,17 @@ class Particle_System{
 
 public:
 
-    Particle_System(){    }
+    Particle_System(){}
 
-    void setup();
+    void setup(size_t _N_particles);
     void update();
     void reset();
 
-    size_t TOTAL;
+    size_t N_particles;
 
-    Particle p[TOTAL];
 
+    Particle *p;
+    ofVec2f a,b,c,d,e,tau;
 };
 
 

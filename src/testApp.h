@@ -1,14 +1,13 @@
 #pragma once
 
     #include "ofMain.h"
-    #include "Particle.h"
+    #include "Particle_System.h"
     #include "ofxOsc.h"
     #include "Visualization.h"
 
     // listen on port 12345
     #define PORT 8000
     #define NUM_MSG_STRINGS 20
-    #define TOTAL 1000      // Esta bueno explorar hasta que número puede llegar
 
     class testApp : public ofBaseApp{
     public:
@@ -27,10 +26,11 @@
             void gotMessage(ofMessage msg);
 
 
+            size_t N_particles;
             Particle_System system;
 
             int tiempo;
-            float a1,a2,b1,b2,c1,c2,d1,d2,e1,e2,tau1,tau2;
+
 
             ofxOscReceiver receiver;
 

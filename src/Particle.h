@@ -1,30 +1,36 @@
  #ifndef visualODEs_PARTICLE_h
     #define visualODEs_PARTICLE_h
 
+    #include "ofMain.h"
+    #include "rk4.h"
+
+    using namespace std;
+
     class Particle {
     public:
-        Particle();
 
-        void agregarFuerza(ofVec2f fuerza);  //agregará un movimiento aleatorio suave
+        Particle(){  }
 
-        bool pasoElBorde();
-        bool estaViva();                        // esta función chequea si esta viva
+        void setup();
 
-        void update();  // el update quitará vida y limitará el movimiento
+        bool border_crossing();
+        bool is_alive();
+        void update();
+        static void derivsParticle(int nX, double X[], double deriv[], double t );
 
-        void draw();
+        ofVec2f pos, vel;
 
-        ofColor color;
-
-        ofVec2f pos, vel, acc;
-        float alphaF, escalaF;
-        int vida,vidaInicial, tamanio;
+        int life,life0;
 
         float t,tbuf,Xbuf,Ybuf,x,y,kx1,kx2,kx3,kx4,ky1,ky2,ky3,ky4,dt,dX,dY;
-        float a1,a2,b1,b2,c1,c2,d1,d2,e1,e2,tau1,tau2;
-        float dx0, dy0;
-        float in1,in2;
+
+        ofVec2f a,b,c,d,e,f,tau,in;
+
+
         float tol, absVel;
 
     };
+
+
+
     #endif
