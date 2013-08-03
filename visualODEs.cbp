@@ -30,15 +30,17 @@
 		<Unit filename="config.make">
 			<Option virtualFolder="build config" />
 		</Unit>
-		<Unit filename="src/Pelota.cpp">
-			<Option virtualFolder="src/" />
-		</Unit>
-		<Unit filename="src/Pelota.h">
-			<Option virtualFolder="src/" />
-		</Unit>
+		<Unit filename="src/Particle.cpp" />
+		<Unit filename="src/Particle.h" />
+		<Unit filename="src/Particle_System.cpp" />
+		<Unit filename="src/Particle_System.h" />
+		<Unit filename="src/Visualization.cpp" />
+		<Unit filename="src/Visualization.h" />
 		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
+		<Unit filename="src/rk4.cpp" />
+		<Unit filename="src/rk4.h" />
 		<Unit filename="src/testApp.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
