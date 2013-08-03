@@ -2,7 +2,6 @@
     #define visualODEs_PARTICLE_h
 
     #include "ofMain.h"
-    #include "rk4.h"
 
     using namespace std;
 
@@ -16,7 +15,6 @@
         bool border_crossing();
         bool is_alive();
         void update();
-        static void derivsParticle(int nX, double X[], double deriv[], double t );
 
         ofVec2f pos, vel;
 
@@ -26,11 +24,11 @@
 
         ofVec2f a,b,c,d,e,f,tau,in;
 
-
         float tol, absVel;
 
+        float xlim1, xlim2, ylim1, ylim2;
+
     };
+    void derivsParticle(int nX, double X[], double dX[], double t, Particle* p);
 
-
-
-    #endif
+#endif

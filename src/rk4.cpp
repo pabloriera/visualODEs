@@ -1,5 +1,7 @@
-void rk4(double X[], int nX, double t, double dt,
-  void (*derivsRK)(int nX, double X[], double deriv[], double t ) ) {
+#include "rk4.h"
+
+void rk4(double X[], int nX, double t, double dt, Particle* p,
+  void (*derivsRK)(int nX, double X[], double deriv[], double t, Particle* p ) ) {
 // Runge-Kutta integrator (4th order)
 // Inputs
 //   X          Current value of dependent variable
@@ -20,7 +22,7 @@ void rk4(double X[], int nX, double t, double dt,
 
 
   //* Evaluate F1 = f(X,t).
-  (*derivsRK)( nX, X, F1, t);
+  (*derivsRK)( nX, X, F1, t,p);
 
   //* Evaluate F2 = f( X+dt*F1/2, t+dt/2 ).
   double half_dt = 0.5*dt;
@@ -29,20 +31,20 @@ void rk4(double X[], int nX, double t, double dt,
   for( i=0; i<nX; i++ )
     Xtemp[i] = X[i] + half_dt*F1[i];
 
-  (*derivsRK)( nX, Xtemp, F2, t_half);
+  (*derivsRK)( nX, Xtemp, F2, t_half,p);
 
   //* Evaluate F3 = f( X+dt*F2/2, t+dt/2 ).
   for( i=0; i<nX; i++ )
     Xtemp[i] = X[i] + half_dt*F2[i];
 
-  (*derivsRK)(nX,  Xtemp, F3, t_half );
+  (*derivsRK)(nX,  Xtemp, F3, t_half ,p);
 
   //* Evaluate F4 = f( X+dt*F3, t+dt ).
   double t_full = t + dt;
   for( i=0; i<nX; i++ )
     Xtemp[i] = X[i] + dt*F3[i];
 
-  (*derivsRK)(nX, Xtemp, F4, t_full );
+  (*derivsRK)(nX, Xtemp, F4, t_full,p );
 
   //* Return X(t+dt) computed from fourth-order R-K.
   for( i=0; i<nX; i++ )

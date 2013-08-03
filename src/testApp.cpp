@@ -64,34 +64,14 @@ void testApp::update(){
        // cout <<m.getAddress() << endl;
 
     }
+*/
 
-
-
-    for(int i = 0; i < TOTAL; i++){
-
-//            p[i].agregarFuerza(ofVec2f((ofRandom(0,2)-1)/1000,(ofRandom(0,2)-1)/1000));
-//            p[i].agregarNoise(1.57, 0.003,mouseX, mouseY);
-//            p[i].agregarAlphaFade(false);
-//            p[i].agregarScaleFade(false);
-
-        p[i].a1 = a1; p[i].b1 = b1;
-        p[i].a2 = a2; p[i].b2 = b2;
-        p[i].tau1 = tau1;p[i].tau2 = tau2;
-        p[i].update();
-
-        //cout << i << endl;
-
-        if (p[i].pasoElBorde() || !p[i].estaViva() ){
-            p[i].vida = 1;
-            p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
-        }
-    }*/
+    system.update();
 }
 
 
 void testApp::draw(){
     ofBackground(0);
-
     visual.displayParticles();
 }
 //--------------------------------------------------------------
