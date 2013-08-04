@@ -34,19 +34,17 @@ void Particle::update(){
 
     rk4(X,2,t,dt, this, derivsParticle);
 
+    absVel = ((pos.x-X[0])*(pos.x-X[0])+(pos.y-X[1])*(pos.y-X[1]));
+
+    if ( absVel < tol*ofRandom(0,1000))
+        life = 0;
+
     pos.x = X[0]; pos.y = X[1];
 
     t += dt;
 
-     /*
-    absVel = ((pos.x-x)*(pos.x-x)+(pos.y-y)*(pos.y-y));
 
-    if ( absVel < tol*ofRandom(0,100))
-        vida = 0;
 
-    pos.set(x,y);
-
-    */
 
 }
 
@@ -59,9 +57,9 @@ bool Particle::border_crossing(){
 
 }
 
-bool Particle::is_alive(){
+bool Particle::is_dead(){
 
-    return (life >= 0);
+    return (life <= 0);
 }
 
 
@@ -70,7 +68,7 @@ void derivsParticle(int nX, double X[], double dX[], double t, Particle* p)
     double x = X[0];
     double y = X[1];
 
-    dX[0] = (p->a.x + p->b.x*x + p->c.x*y + p->d.x* x*x + p->e.x*y*y + p->f.x*x*y)/p->tau.x + p->in.x;
-    dX[1] = (p->a.y + p->b.y*x + p->c.y*y + p->d.y* x*x + p->e.y*y*y + p->f.y*x*y)/p->tau.y + p->in.y;
+    dX[0] = (p->a.x + p->b.x*x + p->c.x*y + p->d.x* x*x + p->e.x* y*y + p->f.x*x*y)/p->tau.x + p->in.x;
+    dX[1] = (p->a.y + p->b.y*y + p->c.y*x + p->d.y* y*y + p->e.y* x*x + p->f.y*x*y)/p->tau.y + p->in.y;
 }
 

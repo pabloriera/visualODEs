@@ -13,7 +13,7 @@ void testApp::setup(){
 
     receiver.setup(PORT);
 
-    N_particles = 100;
+    N_particles = 1000;
     system.setup(N_particles);
     visual.setup(&system);
 
@@ -26,45 +26,14 @@ void testApp::update(){
 
     //cout <<"c"<< endl;
 
-/*    while(receiver.hasWaitingMessages()){
+    while(receiver.hasWaitingMessages()){
         // get the next message
         ofxOscMessage m;
         receiver.getNextMessage(&m);
 
         // check for mouse moved message
-        if(m.getAddress() == "/4/multifader1/1")
-            a1 = m.getArgAsFloat(0)*2-1;
-
-
-        if(m.getAddress() == "/4/multifader1/2")
-            b1 = m.getArgAsFloat(0)*2-1;
-
-        if(m.getAddress() == "/4/multifader1/3")
-            c1 = m.getArgAsFloat(0)*2-1;
-
-
-
-        if(m.getAddress() == "/4/multifader2/1")
-            a2 = m.getArgAsFloat(0)*2-1;
-
-
-        if(m.getAddress() == "/4/multifader2/2")
-            b2 = m.getArgAsFloat(0)*2-1;
-
-        if(m.getAddress() == "/4/multifader2/3")
-            c2 = m.getArgAsFloat(0)*2-1;
-
-        if(m.getAddress() == "/4/multifader1/24")
-            tau1 = ofMap(m.getArgAsFloat(0),0,1,-0.4,0.4,0);
-
-
-        if(m.getAddress() == "/4/multifader2/24")
-            tau2= ofMap(m.getArgAsFloat(0),0,1,-0.4,0.4,0);
-
-       // cout <<m.getAddress() << endl;
-
+        system.OscMessage(&m);
     }
-*/
 
     system.update();
 }

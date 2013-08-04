@@ -29,7 +29,7 @@ void Particle_System::update()
     {
         p[i].update();
 
-        if (p[i].border_crossing() || !p[i].is_alive() )
+        if (p[i].border_crossing() || p[i].is_dead() )
         {
             p[i].life = 1;
             p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
@@ -38,6 +38,44 @@ void Particle_System::update()
 
 }
 
+void Particle_System::OscMessage(ofxOscMessage* m)
+{
+    string address = m->getAddress();
+
+    if (address=="/visualODEs/a/x")
+        a.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/a/y")
+        a.y = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/b/x")
+        b.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/b/y")
+        b.y = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/c/x")
+        c.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/c/y")
+        c.y = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/d/x")
+        d.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/d/y")
+        d.y = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/e/x")
+        e.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/e/y")
+        e.y = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/f/x")
+        f.x = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/f/y")
+        f.y = m->getArgAsFloat(0);
+
+
+    for(size_t i = 0; i < N_particles; i++)
+    {
+        p[i].a = a;p[i].b = b;
+        p[i].c = c;p[i].d = d;
+        p[i].e = e;p[i].f = f;
+    }
+
+}
 
 void Particle_System::reset()
 {

@@ -13,7 +13,7 @@
         void setup();
 
         bool border_crossing();
-        bool is_alive();
+        bool is_dead();
         void update();
 
         ofVec2f pos, vel;

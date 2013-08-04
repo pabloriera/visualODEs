@@ -6,7 +6,7 @@
     #include "Visualization.h"
 
     // listen on port 12345
-    #define PORT 8000
+    #define PORT 54321
     #define NUM_MSG_STRINGS 20
 
     class testApp : public ofBaseApp{
@@ -30,7 +30,6 @@
             Particle_System system;
 
             int tiempo;
-
 
             ofxOscReceiver receiver;
 
