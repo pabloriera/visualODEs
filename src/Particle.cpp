@@ -13,10 +13,12 @@ void Particle::setup(){
     e.set(0,0);
     tau.set(1,1);
 
+    rad = 10;
+
     dt = 0.01;
 
     life = 1;
-    tol = 0.000001*dt;
+    tol = 0.1*dt;
 
     xlim1 = -2;
     xlim2 = 2;
@@ -34,31 +36,23 @@ void Particle::update(){
 
     rk4(X,2,t,dt, this, derivsParticle);
 
-    absVel = ((pos.x-X[0])*(pos.x-X[0])+(pos.y-X[1])*(pos.y-X[1]));
+    vel.set(pos.x-X[0],pos.y-X[1]);
+    absVel = vel.length();
+    if (absVel < tol)
+        if (ofRandom(1)<0.6)
+            life = 0;
 
-    if ( absVel < tol*ofRandom(0,1000))
-        life = 0;
-
-    pos.x = X[0]; pos.y = X[1];
+    pos.set(X[0],X[1]);
 
     t += dt;
 
-
-
-
 }
 
-
-
-
 bool Particle::border_crossing(){
-
     return ( pos.x < xlim1 || pos.y < ylim1 || pos.x > xlim2 || pos.y > ylim2);
-
 }
 
 bool Particle::is_dead(){
-
     return (life <= 0);
 }
 

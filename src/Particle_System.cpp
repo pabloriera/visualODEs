@@ -16,9 +16,8 @@ void Particle_System::setup(size_t _N_particles)
         p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
     }
 
-   /* a.x = -1; a.y = -1;
-    b.x = 0;  b.y = 0;
-    tau.x = 1; tau.y = 1;*/
+    rad = 10;
+    dt = 0.01;
 
 
 }
@@ -67,12 +66,18 @@ void Particle_System::OscMessage(ofxOscMessage* m)
     else if(address=="/visualODEs/f/y")
         f.y = m->getArgAsFloat(0);
 
+    else if(address=="/visualODEs/rad")
+        rad = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/dt")
+        dt = m->getArgAsFloat(0);
+
 
     for(size_t i = 0; i < N_particles; i++)
     {
         p[i].a = a;p[i].b = b;
         p[i].c = c;p[i].d = d;
         p[i].e = e;p[i].f = f;
+        p[i].rad = rad; p[i].dt = dt;
     }
 
 }

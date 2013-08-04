@@ -25,6 +25,7 @@
         ofVec2f a,b,c,d,e,f,tau,in;
 
         float tol, absVel;
+        float rad;
 
         float xlim1, xlim2, ylim1, ylim2;
 

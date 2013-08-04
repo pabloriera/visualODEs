@@ -20,13 +20,20 @@ void Visualization::displayParticles(){
 
     for(size_t i=0; i<system.N_particles;i++){
 
-        int rc = ofMap(i, 0, system.N_particles, 0, 255);
+        //int rc = ofMap(i, 0, system.N_particles, 0, 255);
+    /*   int rc = 100;
         int gc = 20;
-        int bc = 100;
+        int bc = ofMap(system.p[i].absVel,0,0.05,0,255);*/
 
-        ofSetColor(rc, gc, bc, 100);
+        ofColor color;
+        color.setHsb(ofMap(system.p[i].absVel,0,0.2,0,254,true),200,200);
 
-        ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),10);
+        float rad = system.p[i].rad;
+
+        //ofSetColor(rc, gc, bc, 100);
+        ofSetColor(color);
+
+        ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),rad);
 //        ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),10+(i%20)*2);
 
     }
