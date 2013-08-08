@@ -19,6 +19,9 @@ void Particle_System::setup(size_t _N_particles)
     rad = 10;
     dt = 0.01;
 
+    spontaneous = 1;
+    sponRate = .9;
+
 
 }
 
@@ -28,9 +31,9 @@ void Particle_System::update()
     {
         p[i].update();
 
-        if (p[i].border_crossing() || p[i].is_dead() )
+        if (p[i].border_crossing() || p[i].is_dead() || ofRandom(1)>sponRate*spontaneous)
         {
-            p[i].life = 1;
+            p[i].life = 0.5;
             p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
         }
     }
@@ -70,6 +73,9 @@ void Particle_System::OscMessage(ofxOscMessage* m)
         rad = m->getArgAsFloat(0);
     else if(address=="/visualODEs/dt")
         dt = m->getArgAsFloat(0);
+    else if(address=="/visualODEs/sponRate")
+        sponRate = m->getArgAsFloat(0);
+
 
 
     for(size_t i = 0; i < N_particles; i++)

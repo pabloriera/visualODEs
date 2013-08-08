@@ -24,6 +24,8 @@ public:
 
     Particle_System system;
 
+    float maxVel;
+
 };
 
 

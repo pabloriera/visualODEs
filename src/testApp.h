@@ -3,11 +3,13 @@
     #include "ofMain.h"
     #include "Particle_System.h"
     #include "ofxOsc.h"
+    #include "ofxGui.h"
     #include "Visualization.h"
 
     // listen on port 12345
     #define PORT 54321
     #define NUM_MSG_STRINGS 20
+
 
     class testApp : public ofBaseApp{
     public:
@@ -30,8 +32,22 @@
             Particle_System system;
 
             int tiempo;
+            size_t drop;
 
             ofxOscReceiver receiver;
 
             Visualization visual;
+
+            void    setupControls();
+            //void    handleGui(int parameterId, int task, void* data, int length);
+            ofxGui* controls;
+
+            enum {
+                panel,
+                slider,
+            };
+
     };
+
+
+

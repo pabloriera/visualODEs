@@ -18,7 +18,7 @@ void Particle::setup(){
     dt = 0.01;
 
     life = 1;
-    tol = 0.1*dt;
+    tol = 0.001*dt;
 
     xlim1 = -2;
     xlim2 = 2;
@@ -29,22 +29,26 @@ void Particle::setup(){
 
 void Particle::update(){
 
-    double X[2];
-    X[0] = pos.x; X[1] = pos.y;
+    if(life>0)
+    {
 
-    //function <void* ()> faux = bind(,this);
+        double X[2];
+        X[0] = pos.x; X[1] = pos.y;
 
-    rk4(X,2,t,dt, this, derivsParticle);
+        //function <void* ()> faux = bind(,this);
 
-    vel.set(pos.x-X[0],pos.y-X[1]);
-    absVel = vel.length();
-    if (absVel < tol)
-        if (ofRandom(1)<0.6)
-            life = 0;
+        rk4(X,2,t,dt, this, derivsParticle);
 
-    pos.set(X[0],X[1]);
+        vel.set(pos.x-X[0],pos.y-X[1]);
+        absVel = vel.length();
+        if (absVel < tol)
+            if (ofRandom(1)<0.6)
+                life = 0;
 
-    t += dt;
+        pos.set(X[0],X[1]);
+
+        t += dt;
+    }
 
 }
 

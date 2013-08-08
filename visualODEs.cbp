@@ -36,6 +36,7 @@
 		<Unit filename="src/Particle_System.h" />
 		<Unit filename="src/Visualization.cpp" />
 		<Unit filename="src/Visualization.h" />
+		<Unit filename="src/gui.h" />
 		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
