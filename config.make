@@ -20,7 +20,7 @@ USER_CFLAGS = -std=c++0x
 USER_LDFLAGS =
 
 
-EXCLUDE_FROM_SOURCE="bin,.xcodeproj,obj"
+EXCLUDE_FROM_SOURCE="bin,.xcodeproj,obj,ofxGui"
 
 # change this to add different compiler optimizations to your project
 

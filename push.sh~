@@ -1,8 +1,8 @@
 echo "-------------------------------------->"
 echo "CLEANING..."
 make clean
-make clean Debug
-make clean Release
+make cleanDebug
+make cleanRelease
 echo "-------------------------------------->"
 echo "COMMITING..."
 git commit -a -m $1
