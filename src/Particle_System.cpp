@@ -10,19 +10,17 @@ void Particle_System::setup(size_t _N_particles)
     for(size_t i = 0; i < N_particles; i++)
     {
         p[i].setup();
-        p[i].a.x = -1;
-        p[i].a.y = -1;
-
-        p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
     }
-
+    reset();
+    a.x = -1;
+    b.y = 1;
     rad = 10;
     dt = 0.01;
 
+    update_parameters();
+
     spontaneous = 1;
     sponRate = .9;
-
-
 }
 
 void Particle_System::update()
@@ -76,8 +74,11 @@ void Particle_System::OscMessage(ofxOscMessage* m)
     else if(address=="/visualODEs/sponRate")
         sponRate = m->getArgAsFloat(0);
 
+    update_parameters();
+}
 
-
+void Particle_System::update_parameters()
+{
     for(size_t i = 0; i < N_particles; i++)
     {
         p[i].a = a;p[i].b = b;
@@ -87,7 +88,6 @@ void Particle_System::OscMessage(ofxOscMessage* m)
     }
 
 }
-
 void Particle_System::reset()
 {
     for(size_t i = 0; i < N_particles; i++)

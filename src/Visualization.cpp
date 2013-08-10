@@ -11,13 +11,16 @@
 void Visualization::setup(Particle_System* _system ){
 
     system = *_system;
-    ofEnableBlendMode(OF_BLENDMODE_ADD);
+
     maxVel = 0.2;
 }
 
 
 void Visualization::displayParticles(){
 
+
+    ofFill();
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
 
     for(size_t i=0; i<system.N_particles;i++){
 

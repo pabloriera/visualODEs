@@ -13,6 +13,7 @@ public:
 
     void setup(size_t _N_particles);
     void OscMessage(ofxOscMessage* m);
+    void update_parameters();
     void update();
     void reset();
 

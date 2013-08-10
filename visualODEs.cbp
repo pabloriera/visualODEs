@@ -6,7 +6,7 @@
 		<Option makefile_is_custom="1" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="addons/;src/;build config/;" />
+		<Option virtualFolders="addons/;src/;build config/;addons/ofxGui/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/$(PROJECT_NAME)_debug" prefix_auto="1" extension_auto="1" />
@@ -30,23 +30,134 @@
 		<Unit filename="config.make">
 			<Option virtualFolder="build config" />
 		</Unit>
-		<Unit filename="src/Particle.cpp" />
-		<Unit filename="src/Particle.h" />
-		<Unit filename="src/Particle_System.cpp" />
-		<Unit filename="src/Particle_System.h" />
-		<Unit filename="src/Visualization.cpp" />
-		<Unit filename="src/Visualization.h" />
-		<Unit filename="src/gui.h" />
+		<Unit filename="src/Particle.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Particle.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Particle_System.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Particle_System.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Visualization.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/Visualization.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/gui.h">
+			<Option virtualFolder="src/" />
+		</Unit>
 		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="src/rk4.cpp" />
-		<Unit filename="src/rk4.h" />
+		<Unit filename="src/rk4.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/rk4.h">
+			<Option virtualFolder="src/" />
+		</Unit>
 		<Unit filename="src/testApp.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
 		<Unit filename="src/testApp.h">
 			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGui.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGui.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiButton.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiButton.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiColor.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiColor.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiFiles.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiFiles.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiGlobals.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiGlobals.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiKnob.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiKnob.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiMatrix.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiMatrix.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiObject.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiObject.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPanel.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPanel.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPoints.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPoints.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiRadar.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiRadar.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiScope.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiScope.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSwitch.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSwitch.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiTypes.h">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiXYPad.cpp">
+			<Option virtualFolder="addons/ofxGui/" />
+		</Unit>
+		<Unit filename="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiXYPad.h">
+			<Option virtualFolder="addons/ofxGui/" />
 		</Unit>
 		<Extensions>
 			<code_completion />

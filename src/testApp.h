@@ -11,7 +11,7 @@
     #define NUM_MSG_STRINGS 20
 
 
-    class testApp : public ofBaseApp{
+    class testApp : public ofBaseApp, ofxGuiListener{
     public:
             void setup();
             void update();
@@ -34,17 +34,31 @@
             int tiempo;
             size_t drop;
 
+            bool guiOn;
+
             ofxOscReceiver receiver;
 
             Visualization visual;
 
+            //Basic for GUI
             void    setupControls();
-            //void    handleGui(int parameterId, int task, void* data, int length);
+            void    handleGui(int parameterId, int task, void* data, int length);
             ofxGui* controls;
 
             enum {
                 panel,
-                slider,
+                slider_dt,
+                slider_rad,
+                slider_maxVel,
+                slider_ax,
+                slider_ay,
+                slider_bx,
+                slider_by,
+                slider_cx,
+                slider_cy,
+                slider_dx,
+                slider_dy,
+
             };
 
     };

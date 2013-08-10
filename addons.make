@@ -1,2 +1,5 @@
-ofxOsc
 ofxGui
+ofxOsc
+ofxXmlSettings
+
+
