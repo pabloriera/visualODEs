@@ -24,6 +24,10 @@ public:
 
     Particle_System system;
 
+    ofColor* color;
+
+    bool color_absVel, color_vel;
+
     float maxVel;
 
 };

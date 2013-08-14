@@ -12,6 +12,8 @@ void testApp::setup(){
     controls = ofxGui::Instance(this);
     setupControls();
 
+    controls->buildFromXml("controls_config.xml");
+
     receiver.setup(PORT);
 
     N_particles = 5000;
@@ -77,6 +79,22 @@ void testApp::keyPressed(int key){
     if(key=='c')
         guiOn=!guiOn;
 
+    if(key=='1')
+    {
+        visual.color_absVel = true;
+        visual.color_vel = false;
+    }
+
+    if(key=='2')
+    {
+        visual.color_absVel = false;
+        visual.color_vel = true;
+    }
+
+    if(key=='s')
+    {
+      controls->saveToXml("controls_config.xml");
+    }
 }
 
 //--------------------------------------------------------------

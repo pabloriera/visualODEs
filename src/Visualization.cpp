@@ -12,7 +12,11 @@ void Visualization::setup(Particle_System* _system ){
 
     system = *_system;
 
+    color = new ofColor [system.N_particles];
+
     maxVel = 0.2;
+    color_absVel = true;
+    color_vel = false;
 }
 
 
@@ -31,13 +35,16 @@ void Visualization::displayParticles(){
 
         if (system.p[i].life>0.5)
         {
-            ofColor color;
-            color.setHsb(ofMap(system.p[i].absVel,0,maxVel,1,254,true),200,200);
+            if(color_absVel)
+                color[i].setHsb(ofMap(system.p[i].absVel,0,maxVel,1,254,true),200,ofMap(system.p[i].absVel,0,maxVel,100,200,true));
+
+            if(color_vel)
+                color[i].set(ofMap(abs(system.p[i].vel.x),0,maxVel,1,254,true),100,ofMap(abs(system.p[i].vel.y),0,maxVel,1,254,true));
 
             float rad = system.p[i].rad;
 
             //ofSetColor(rc, gc, bc, 100);
-            ofSetColor(color);
+            ofSetColor(color[i]);
 
             ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),rad);
 //          ofCircle((system.p[i].pos.x+2)/4*ofGetWindowWidth(), (system.p[i].pos.y+2)/4*ofGetWindowHeight(),10+(i%20)*2);

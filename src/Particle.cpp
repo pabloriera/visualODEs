@@ -37,16 +37,21 @@ void Particle::update(){
 
         //function <void* ()> faux = bind(,this);
 
+        //integrates dynamical system
         rk4(X,2,t,dt, this, derivsParticle);
 
+
+        //calculate velocity and evaluate if the particle is quiete
         vel.set(pos.x-X[0],pos.y-X[1]);
         absVel = vel.length();
         if (absVel < tol)
             if (ofRandom(1)<0.6)
                 life = 0;
 
+        //set new position
         pos.set(X[0],X[1]);
 
+        //increase time
         t += dt;
     }
 

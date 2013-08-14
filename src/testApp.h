@@ -16,6 +16,7 @@
             void setup();
             void update();
             void draw();
+            //~testApp();
 
             void keyPressed  (int key);
             void keyReleased(int key);
@@ -46,10 +47,11 @@
             ofxGui* controls;
 
             enum {
-                panel,
+                panel_params, panel_0, panel_1, panel_2,
                 slider_dt,
                 slider_rad,
                 slider_maxVel,
+                slider_sponReset,
                 slider_ax,
                 slider_ay,
                 slider_bx,
@@ -58,6 +60,10 @@
                 slider_cy,
                 slider_dx,
                 slider_dy,
+                slider_ex,
+                slider_ey,
+                slider_fx,
+                slider_fy,
 
             };
 
