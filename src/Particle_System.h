@@ -23,7 +23,7 @@ public:
     ofVec2f a,b,c,d,e,f,tau;
     float dt,rad;
 
-    int spontaneous, dead;
+    int velReset, screenReset;
     float sponReset;
 };
 

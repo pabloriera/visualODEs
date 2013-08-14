@@ -19,9 +19,9 @@ void Particle_System::setup(size_t _N_particles)
 
     update_parameters();
 
-    spontaneous = 1;
-    dead = 1;
-    sponReset = .9;
+    screenReset = 1;
+    velReset = 1;
+    sponReset = .1;
 }
 
 void Particle_System::update()
@@ -30,10 +30,10 @@ void Particle_System::update()
     {
         p[i].update();
 
-        if (p[i].border_crossing() || p[i].is_dead()*dead || ofRandom(1)>sponReset*spontaneous)
+        if (p[i].border_crossing()*screenReset || p[i].is_dead()*velReset || ofRandom(1)<sponReset)
         {
             p[i].life = 0.5;
-            p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
+            p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2) );
         }
     }
 

@@ -8,20 +8,22 @@ void testApp::setup(){
      //cout << "hola2"<< endl;
     ofSetFrameRate(100);
 
-    //Gui setup
-    controls = ofxGui::Instance(this);
-    setupControls();
 
-    controls->buildFromXml("controls_config.xml");
 
     receiver.setup(PORT);
 
-    N_particles = 5000;
+    N_particles = 8000;
     system.setup(N_particles);
     visual.setup(&system);
 
     drop = 0;
     guiOn=false;
+
+    //Gui setup
+    controls = ofxGui::Instance(this);
+   // setupControls();
+
+    controls->buildFromXml("controls_config.xml");
 
 }
 

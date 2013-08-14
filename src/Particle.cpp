@@ -18,7 +18,7 @@ void Particle::setup(){
     dt = 0.01;
 
     life = 1;
-    tol = 0.001*dt;
+    tol = 0.01*dt;
 
     xlim1 = -2;
     xlim2 = 2;
@@ -45,8 +45,7 @@ void Particle::update(){
         vel.set(pos.x-X[0],pos.y-X[1]);
         absVel = vel.length();
         if (absVel < tol)
-            if (ofRandom(1)<0.6)
-                life = 0;
+            life = 0;
 
         //set new position
         pos.set(X[0],X[1]);

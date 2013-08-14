@@ -48,6 +48,8 @@
 
             enum {
                 panel_params, panel_0, panel_1, panel_2,
+                button_velReset,
+                button_screenReset,
                 slider_dt,
                 slider_rad,
                 slider_maxVel,
