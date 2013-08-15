@@ -83,7 +83,7 @@
             <STEPS>0</STEPS>
             <MIN>0.001000000</MIN>
             <MAX>0.500000000</MAX>
-            <VALUE>0.050900001</VALUE>
+            <VALUE>0.125750005</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>9</ID>
@@ -97,7 +97,7 @@
             <STEPS>0</STEPS>
             <MIN>0.000010000</MIN>
             <MAX>1.000000000</MAX>
-            <VALUE>0.000000000</VALUE>
+            <VALUE>0.107151784</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>4</ID>

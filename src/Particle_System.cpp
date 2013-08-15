@@ -30,7 +30,7 @@ void Particle_System::update()
     {
         p[i].update();
 
-        if (p[i].border_crossing()*screenReset || p[i].is_dead()*velReset || ofRandom(1)<sponReset)
+        if (p[i].border_crossing()*screenReset || p[i].is_dead()*velReset || ofRandom(1)<(sponReset-0.01) )
         {
             p[i].life = 0.5;
             p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2) );

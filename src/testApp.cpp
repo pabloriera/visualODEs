@@ -117,8 +117,10 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
+
     if(guiOn)
         controls->mousePressed(x, y, button);
+
 }
 
 //--------------------------------------------------------------
@@ -140,4 +142,10 @@ void testApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void testApp::dragEvent(ofDragInfo dragInfo){
 
+}
+
+testApp::~testApp()
+{
+     //controls->saveToXml("controls_config.xml");
+    cout << "end" << endl;
 }

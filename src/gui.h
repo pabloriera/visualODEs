@@ -121,10 +121,10 @@ void testApp::handleGui(int parameterId, int task, void* data, int length){
 				system.sponReset = *(float*)data;
 			break;
 		case button_velReset:
-				system.velReset = *(float*)data;
+				system.velReset = *(int*)data;
 			break;
         case button_screenReset:
-				system.screenReset = *(float*)data;
+				system.screenReset = *(int*)data;
 			break;
         case slider_ax:
 				system.a.x = *(float*)data;
