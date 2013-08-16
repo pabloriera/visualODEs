@@ -5,78 +5,30 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/Particle.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="679" topLine="57" />
+		<Cursor position="97" topLine="0" />
 	</File>
-	<File name="src/Particle.h" open="1" top="0" tabpos="17">
-		<Cursor position="303" topLine="15" />
+	<File name="src/Particle.h" open="1" top="0" tabpos="2">
+		<Cursor position="66" topLine="0" />
 	</File>
-	<File name="src/Particle_System.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="325" topLine="27" />
+	<File name="src/Particle_System.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="304" topLine="0" />
 	</File>
-	<File name="src/Particle_System.h" open="1" top="0" tabpos="4">
-		<Cursor position="448" topLine="11" />
+	<File name="src/Particle_System.h" open="1" top="0" tabpos="1">
+		<Cursor position="373" topLine="0" />
 	</File>
-	<File name="src/Visualization.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="824" topLine="31" />
+	<File name="src/gui.h" open="1" top="1" tabpos="3">
+		<Cursor position="2900" topLine="49" />
 	</File>
-	<File name="src/Visualization.h" open="1" top="0" tabpos="8">
-		<Cursor position="400" topLine="14" />
-	</File>
-	<File name="src/gui.h" open="1" top="0" tabpos="10">
-		<Cursor position="6456" topLine="158" />
-	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="11">
+	<File name="src/main.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="414" topLine="0" />
 	</File>
-	<File name="src/rk4.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="0" topLine="0" />
+	<File name="src/testApp.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="483" topLine="2" />
 	</File>
-	<File name="src/rk4.h" open="1" top="0" tabpos="3">
-		<Cursor position="262" topLine="0" />
+	<File name="src/testApp.h" open="1" top="0" tabpos="5">
+		<Cursor position="1147" topLine="20" />
 	</File>
-	<File name="src/testApp.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="277" topLine="6" />
-	</File>
-	<File name="src/testApp.h" open="1" top="0" tabpos="2">
-		<Cursor position="1371" topLine="38" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGui.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="5518" topLine="241" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGui.h" open="1" top="0" tabpos="12">
-		<Cursor position="1141" topLine="28" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiFiles.cpp" open="1" top="0" tabpos="22">
-		<Cursor position="1232" topLine="43" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiGlobals.cpp" open="1" top="0" tabpos="20">
-		<Cursor position="5028" topLine="143" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiGlobals.h" open="1" top="0" tabpos="13">
-		<Cursor position="655" topLine="17" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiObject.h" open="1" top="0" tabpos="19">
-		<Cursor position="1676" topLine="49" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPanel.cpp" open="1" top="1" tabpos="16">
-		<Cursor position="14573" topLine="445" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPanel.h" open="1" top="0" tabpos="24">
-		<Cursor position="2793" topLine="29" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiPoints.cpp" open="1" top="0" tabpos="23">
-		<Cursor position="2816" topLine="99" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.cpp" open="1" top="0" tabpos="15">
-		<Cursor position="4546" topLine="163" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.h" open="1" top="0" tabpos="25">
-		<Cursor position="577" topLine="10" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSwitch.cpp" open="1" top="0" tabpos="21">
-		<Cursor position="5161" topLine="192" />
-	</File>
-	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiTypes.h" open="1" top="0" tabpos="18">
-		<Cursor position="5632" topLine="298" />
+	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3367" topLine="107" />
 	</File>
 </CodeBlocks_layout_file>

@@ -60,7 +60,7 @@ void testApp::setupControls()
 
        //PANEL PARAMETROS
 	ofxGuiPanel* panel_params = controls->addPanel(appPtr->panel_params, "", 10, panels_pos_y_0, OFXGUI_PANEL_BORDER, OFXGUI_PANEL_SPACING);
-	panel_params->addSlider(appPtr->slider_dt, "DT", slider_width, 15, 0.001f, 1.0f, 0.0f, kofxGui_Display_Float4, 0);
+	panel_params->addSlider(appPtr->slider_dt, "DT", slider_width, 15, 0.001f, 1.0f, 0.1f, kofxGui_Display_Float4, 0);
 	panel_params->addSlider(appPtr->slider_rad, "Rad", slider_width, 15, 0.01f, 50.0f, 0.0f, kofxGui_Display_Float2, 0);
 	panel_params->addSlider(appPtr->slider_maxVel, "maxVel", slider_width, 15, 0.001f, 0.5f, 0.0f, kofxGui_Display_Float2, 0);
 	panel_params->addSlider(appPtr->slider_sponReset, "sponReset", slider_width, 15, 0.00001f, 1.0f, 0.0f, kofxGui_Display_Float2, 0);
@@ -70,26 +70,26 @@ void testApp::setupControls()
     //PANEL ORDER 2
     ofxGuiPanel* panel_2 = controls->addPanel(appPtr->panel_2, "", ofGetWidth()-slider_width-30, panels_pos_y_0, OFXGUI_PANEL_BORDER, OFXGUI_PANEL_SPACING);
 
-	panel_2->addSlider(appPtr->slider_dx, "d.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_2->addSlider(appPtr->slider_dy, "d.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_2->addSlider(appPtr->slider_ex, "e.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_2->addSlider(appPtr->slider_ey, "e.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_2->addSlider(appPtr->slider_fx, "f.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_2->addSlider(appPtr->slider_fy, "f.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_dx, "co[d].x^2", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_dy, "co[d].y^2", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_ex, "co[e].y^2", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_ey, "co[e].x^2", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_fx, "co[f].x.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_2->addSlider(appPtr->slider_fy, "co[f].x.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
 
     //PANEL ORDEN 1
     ofxGuiPanel* panel_1 = controls->addPanel(appPtr->panel_1, "",  ofGetWidth()-(slider_width+30)*2, panels_pos_y_0, OFXGUI_PANEL_BORDER, OFXGUI_PANEL_SPACING);
 
-    panel_1->addSlider(appPtr->slider_bx, "b.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_1->addSlider(appPtr->slider_by, "b.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_1->addSlider(appPtr->slider_cx, "c.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_1->addSlider(appPtr->slider_cy, "c.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+    panel_1->addSlider(appPtr->slider_bx, "co[b].x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_1->addSlider(appPtr->slider_by, "co[b].y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_1->addSlider(appPtr->slider_cx, "co[c].y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_1->addSlider(appPtr->slider_cy, "co[c].x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
 
 
     //PANEL ORDEN 0
     ofxGuiPanel* panel_0 = controls->addPanel(appPtr->panel_0, "",ofGetWidth()-(slider_width+30)*3, panels_pos_y_0, OFXGUI_PANEL_BORDER, OFXGUI_PANEL_SPACING);
-    panel_0->addSlider(appPtr->slider_ax, "a.x", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
-	panel_0->addSlider(appPtr->slider_ay, "a.y", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+    panel_0->addSlider(appPtr->slider_ax, "a", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
+	panel_0->addSlider(appPtr->slider_ay, "a", slider_width, 15, -2.0f, 2.0f, 0.0f, kofxGui_Display_Float2, 0);
 
 
 
@@ -127,51 +127,51 @@ void testApp::handleGui(int parameterId, int task, void* data, int length){
 				system.screenReset = *(int*)data;
 			break;
         case slider_ax:
-				system.a.x = *(float*)data;
+				system.co[a].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_ay:
-				system.a.y = *(float*)data;
+				system.co[a].y = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_bx:
-				system.b.x = *(float*)data;
+				system.co[b].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_by:
-				system.b.y = *(float*)data;
+				system.co[b].y = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_cx:
-				system.c.x = *(float*)data;
+				system.co[c].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_cy:
-				system.c.y = *(float*)data;
+				system.co[c].y = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_dx:
-				system.d.x = *(float*)data;
+				system.co[d].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_dy:
-				system.d.y = *(float*)data;
+				system.co[d].y = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_ex:
-				system.e.x = *(float*)data;
+				system.co[e].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_ey:
-				system.e.y = *(float*)data;
+				system.co[e].y = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_fx:
-				system.f.x = *(float*)data;
+				system.co[f].x = *(float*)data;
 				system.update_parameters();
 			break;
         case slider_fy:
-				system.f.y = *(float*)data;
+				system.co[f].y = *(float*)data;
 				system.update_parameters();
 			break;
 

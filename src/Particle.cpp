@@ -6,12 +6,12 @@ void Particle::setup(){
 
     t = 0.0;
 
-    a.set(0,0);
-    b.set(0,0);
-    c.set(0,0);
-    d.set(0,0);
-    e.set(0,0);
-    tau.set(1,1);
+    co[a].set(0,0);
+    co[b].set(0,0);
+    co[c].set(0,0);
+    co[d].set(0,0);
+    co[e].set(0,0);
+    co[tau].set(1,1);
 
     rad = 10;
 
@@ -70,7 +70,8 @@ void derivsParticle(int nX, double X[], double dX[], double t, Particle* p)
     double x = X[0];
     double y = X[1];
 
-    dX[0] = (p->a.x + p->b.x*x + p->c.x*y + p->d.x* x*x + p->e.x* y*y + p->f.x*x*y)*p->tau.x + p->in.x;
-    dX[1] = (p->a.y + p->b.y*y + p->c.y*x + p->d.y* y*y + p->e.y* x*x + p->f.y*x*y)*p->tau.y + p->in.y;
+    dX[0] = (p->co[a].x + p->co[b].x*x + p->co[c].x*y + p->co[d].x* x*x + p->co[e].x* y*y + p->co[f].x*x*y)*p->co[tau].x + p->in.x;
+    dX[1] = (p->co[a].y + p->co[b].y*y + p->co[c].y*x + p->co[d].y* y*y + p->co[e].y* x*x + p->co[f].y*x*y)*p->co[tau].y + p->in.y;
+
 }
 

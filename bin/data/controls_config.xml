@@ -54,8 +54,8 @@
             <DISPLAY>3</DISPLAY>
             <STEPS>0</STEPS>
             <MIN>0.001000000</MIN>
-            <MAX>1.000000000</MAX>
-            <VALUE>0.029542858</VALUE>
+            <MAX>0.100000001</MAX>
+            <VALUE>0.008071429</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>7</ID>
@@ -83,7 +83,7 @@
             <STEPS>0</STEPS>
             <MIN>0.001000000</MIN>
             <MAX>0.500000000</MAX>
-            <VALUE>0.125750005</VALUE>
+            <VALUE>0.221985728</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>9</ID>
@@ -97,7 +97,7 @@
             <STEPS>0</STEPS>
             <MIN>0.000010000</MIN>
             <MAX>1.000000000</MAX>
-            <VALUE>0.164294079</VALUE>
+            <VALUE>0.000010000</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>4</ID>

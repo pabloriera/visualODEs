@@ -20,7 +20,8 @@ public:
     size_t N_particles;
 
     Particle *p;
-    ofVec2f a,b,c,d,e,f,tau;
+    ofVec2f co[7];
+
     float dt,rad;
 
     int velReset, screenReset;

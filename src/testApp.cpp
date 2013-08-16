@@ -10,7 +10,7 @@ void testApp::setup(){
 
     receiver.setup(PORT);
 
-    N_particles = 5000;
+    N_particles = 10000;
     system.setup(N_particles);
     visual.setup(&system);
 
@@ -22,6 +22,21 @@ void testApp::setup(){
    // setupControls();
 
     controls->buildFromXml("controls_config.xml");
+    verdana.loadFont("verdana.ttf", 20);
+
+    monomialX[0] = "";
+    monomialX[1] = "X";
+    monomialX[2] = "Y";
+    monomialX[3] = "X^2";
+    monomialX[4] = "Y^2";
+    monomialX[5] = "XY";
+
+    monomialY[0] = "";
+    monomialY[1] = "Y";
+    monomialY[2] = "X";
+    monomialY[3] = "Y^2";
+    monomialY[4] = "X^2";
+    monomialY[5] = "XY";
 
 }
 
@@ -67,6 +82,48 @@ void testApp::draw(){
     ofBackground(0);
 
     visual.draw();
+
+    ofSetColor(255);
+
+    string drawStringX, drawStringY;
+    bool changeX=false,changeY=false;
+    float aux;
+
+    drawStringX = "dx/dt = ";
+    drawStringY = "dy/dt = ";
+
+    for(size_t j = 0; j<6;j++)
+    {
+        aux = system.co[j].x;
+        if(aux!=0)
+            {
+                drawStringX += ofToString(system.co[j].x,1,4,' ') + " " + monomialX[j] + " + ";
+                changeX = true;
+            }
+
+        aux = system.co[j].y;
+        if(aux!=0)
+            {
+                drawStringY += ofToString(system.co[j].y,1,4,' ') + " " + monomialY[j] + " + ";
+                changeY = true;
+            }
+    }
+
+    if(!changeX)
+        drawStringX += "0";
+    else
+        drawStringX.resize(drawStringX.size()-3);
+
+    if(!changeY)
+        drawStringY += "0";
+    else
+        drawStringY.resize(drawStringY.size()-3);
+
+
+
+
+    verdana.drawString(drawStringX,20,ofGetHeight()-60);
+    verdana.drawString(drawStringY,20,ofGetHeight()-30);
 
     //Gui Draw
     if(guiOn)

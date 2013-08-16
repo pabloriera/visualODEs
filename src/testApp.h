@@ -41,6 +41,13 @@
 
             Visualization visual;
 
+            ofTrueTypeFont verdana;
+
+
+            string monomialX[7];
+            string monomialY[7];
+
+
             //Basic for GUI
             void    setupControls();
             void    handleGui(int parameterId, int task, void* data, int length);

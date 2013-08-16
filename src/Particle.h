@@ -3,6 +3,9 @@
 
     #include "ofMain.h"
 
+    enum {a,b,c,d,e,f,tau};
+
+
     using namespace std;
 
     class Particle {
@@ -22,7 +25,7 @@
 
         float t,tbuf,Xbuf,Ybuf,x,y,kx1,kx2,kx3,kx4,ky1,ky2,ky3,ky4,dt,dX,dY;
 
-        ofVec2f a,b,c,d,e,f,tau,in;
+        ofVec2f co[7],in;
 
         float tol, absVel;
         float rad;

@@ -12,8 +12,10 @@ void Particle_System::setup(size_t _N_particles)
         p[i].setup();
     }
     reset();
-    a.x = -1;
-    b.y = 1;
+    co[a].x = -1;
+    co[b].y = 1;
+    co[tau].set(1,1);
+
     rad = 10;
     dt = 0.01;
 
@@ -44,29 +46,29 @@ void Particle_System::OscMessage(ofxOscMessage* m)
     string address = m->getAddress();
 
     if (address=="/visualODEs/a/x")
-        a.x = m->getArgAsFloat(0);
+        co[a].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/a/y")
-        a.y = m->getArgAsFloat(0);
+        co[a].y = m->getArgAsFloat(0);
     else if(address=="/visualODEs/b/x")
-        b.x = m->getArgAsFloat(0);
+        co[b].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/b/y")
-        b.y = m->getArgAsFloat(0);
+        co[b].y = m->getArgAsFloat(0);
     else if(address=="/visualODEs/c/x")
-        c.x = m->getArgAsFloat(0);
+        co[c].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/c/y")
-        c.y = m->getArgAsFloat(0);
+        co[c].y = m->getArgAsFloat(0);
     else if(address=="/visualODEs/d/x")
-        d.x = m->getArgAsFloat(0);
+        co[d].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/d/y")
-        d.y = m->getArgAsFloat(0);
+        co[d].y = m->getArgAsFloat(0);
     else if(address=="/visualODEs/e/x")
-        e.x = m->getArgAsFloat(0);
+        co[e].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/e/y")
-        e.y = m->getArgAsFloat(0);
+        co[e].y = m->getArgAsFloat(0);
     else if(address=="/visualODEs/f/x")
-        f.x = m->getArgAsFloat(0);
+        co[f].x = m->getArgAsFloat(0);
     else if(address=="/visualODEs/f/y")
-        f.y = m->getArgAsFloat(0);
+        co[f].y = m->getArgAsFloat(0);
 
     else if(address=="/visualODEs/rad")
         rad = m->getArgAsFloat(0);
@@ -80,11 +82,12 @@ void Particle_System::OscMessage(ofxOscMessage* m)
 
 void Particle_System::update_parameters()
 {
+
     for(size_t i = 0; i < N_particles; i++)
     {
-        p[i].a = a;p[i].b = b;
-        p[i].c = c;p[i].d = d;
-        p[i].e = e;p[i].f = f;
+        for(size_t j = 0; j < 7; j++)
+            p[i].co[j] = co[j];
+
         p[i].rad = rad; p[i].dt = dt;
     }
 
