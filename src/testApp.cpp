@@ -8,11 +8,9 @@ void testApp::setup(){
      //cout << "hola2"<< endl;
     ofSetFrameRate(100);
 
-
-
     receiver.setup(PORT);
 
-    N_particles = 8000;
+    N_particles = 5000;
     system.setup(N_particles);
     visual.setup(&system);
 
@@ -58,15 +56,17 @@ void testApp::update(){
             system.OscMessage(&m);
     }
 
-    system.update();
-}
 
+    visual.update();
+    system.update();
+
+}
 
 void testApp::draw(){
 
     ofBackground(0);
 
-    visual.displayParticles();
+    visual.draw();
 
     //Gui Draw
     if(guiOn)
@@ -81,13 +81,13 @@ void testApp::keyPressed(int key){
     if(key=='c')
         guiOn=!guiOn;
 
-    if(key=='1')
+    if(key=='o')
     {
         visual.color_absVel = true;
         visual.color_vel = false;
     }
 
-    if(key=='2')
+    if(key=='p')
     {
         visual.color_absVel = false;
         visual.color_vel = true;
@@ -97,6 +97,21 @@ void testApp::keyPressed(int key){
     {
       controls->saveToXml("controls_config.xml");
     }
+
+    if(key=='1')
+    {
+        visual.fbo_active=1;
+    }
+    if(key=='2')
+    {
+        visual.fbo_active=1;
+    }
+    if(key=='3')
+    {
+        visual.fbo_active=1;
+    }
+    if(key=='f')
+        visual.dFBO = !visual.dFBO;
 }
 
 //--------------------------------------------------------------

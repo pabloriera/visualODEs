@@ -19,8 +19,8 @@ public:
     Visualization(){ }
 
     void setup(Particle_System* _system);
-
-    void displayParticles();
+    void update();
+    void draw();
 
     Particle_System system;
 
@@ -29,6 +29,10 @@ public:
     bool color_absVel, color_vel;
 
     float maxVel;
+
+    vector<ofFbo> fbo;
+    size_t fbo_active;
+    bool dFBO;
 
 };
 

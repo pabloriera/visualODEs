@@ -70,7 +70,7 @@ void derivsParticle(int nX, double X[], double dX[], double t, Particle* p)
     double x = X[0];
     double y = X[1];
 
-    dX[0] = (p->a.x + p->b.x*x + p->c.x*y + p->d.x* x*x + p->e.x* y*y + p->f.x*x*y)/p->tau.x + p->in.x;
-    dX[1] = (p->a.y + p->b.y*y + p->c.y*x + p->d.y* y*y + p->e.y* x*x + p->f.y*x*y)/p->tau.y + p->in.y;
+    dX[0] = (p->a.x + p->b.x*x + p->c.x*y + p->d.x* x*x + p->e.x* y*y + p->f.x*x*y)*p->tau.x + p->in.x;
+    dX[1] = (p->a.y + p->b.y*y + p->c.y*x + p->d.y* y*y + p->e.y* x*x + p->f.y*x*y)*p->tau.y + p->in.y;
 }
 
