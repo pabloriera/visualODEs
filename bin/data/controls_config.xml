@@ -55,7 +55,7 @@
             <STEPS>0</STEPS>
             <MIN>0.001000000</MIN>
             <MAX>0.100000001</MAX>
-            <VALUE>0.008071429</VALUE>
+            <VALUE>0.037771426</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>7</ID>
@@ -69,7 +69,7 @@
             <STEPS>0</STEPS>
             <MIN>0.010000000</MIN>
             <MAX>50.000000000</MAX>
-            <VALUE>2.866571426</VALUE>
+            <VALUE>2.509500027</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>8</ID>
@@ -83,7 +83,7 @@
             <STEPS>0</STEPS>
             <MIN>0.001000000</MIN>
             <MAX>0.500000000</MAX>
-            <VALUE>0.221985728</VALUE>
+            <VALUE>0.022385716</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>9</ID>
@@ -273,7 +273,7 @@
             <STEPS>0</STEPS>
             <MIN>-2.000000000</MIN>
             <MAX>2.000000000</MAX>
-            <VALUE>-2.000000000</VALUE>
+            <VALUE>0.799999952</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>15</ID>
@@ -287,7 +287,7 @@
             <STEPS>0</STEPS>
             <MIN>-2.000000000</MIN>
             <MAX>2.000000000</MAX>
-            <VALUE>2.000000000</VALUE>
+            <VALUE>-1.171428561</VALUE>
         </OBJECT>
     </OBJECT>
     <OBJECT>
@@ -314,7 +314,7 @@
             <STEPS>0</STEPS>
             <MIN>-2.000000000</MIN>
             <MAX>2.000000000</MAX>
-            <VALUE>0.000000000</VALUE>
+            <VALUE>0.142857075</VALUE>
         </OBJECT>
         <OBJECT>
             <ID>11</ID>

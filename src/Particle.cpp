@@ -25,6 +25,13 @@ void Particle::setup(){
     ylim1 = -2;
     ylim2 = 2;
 
+    tr_p = 0;
+    max_tr_p = 500;
+    tr_l = 0;
+    max_t = 10000;
+    t_dir = 1;
+    dTraj = false;
+
 }
 
 void Particle::update(){
@@ -38,7 +45,7 @@ void Particle::update(){
         //function <void* ()> faux = bind(,this);
 
         //integrates dynamical system
-        rk4(X,2,t,dt, this, derivsParticle);
+        rk4(X,2,t,t_dir*dt, this, derivsParticle);
 
 
         //calculate velocity and evaluate if the particle is quiete
@@ -49,9 +56,30 @@ void Particle::update(){
 
         //set new position
         pos.set(X[0],X[1]);
+        tr_p++;
+
+        if(tr_p > traj.size())
+            traj.push_back(new ofVec2f(X[0],X[1]));
+        else
+            traj[tr_p-1]->set(X[0],X[1]);
+
+
+        if(tr_p>max_tr_p)
+        {
+            tr_l = max_tr_p;
+            tr_p = 0;
+            if (dTraj)
+                pos = pos0;
+        }
+
 
         //increase time
-        t += dt;
+        t += t_dir*dt;
+        if(ABS(t)>max_t)
+        {
+            t = 0;
+        }
+
     }
 
 }

@@ -24,6 +24,8 @@ void Particle_System::setup(size_t _N_particles)
     screenReset = 1;
     velReset = 1;
     sponReset = .1;
+
+    N_traj = 10;
 }
 
 void Particle_System::update()
@@ -34,9 +36,21 @@ void Particle_System::update()
 
         if (p[i].border_crossing()*screenReset || p[i].is_dead()*velReset || ofRandom(1)<(sponReset-0.01) )
         {
-            p[i].life = 0.5;
-            p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2) );
+            if(!p[i].dTraj)
+            {
+                p[i].life = 0.5;
+                p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2) );
+            }
+
+            else
+            {
+                p[i].tr_l = p[i].tr_p;
+                p[i].tr_p = 0;
+                p[i].life = 0.5;
+                p[i].pos = p[i].pos0;
+            }
         }
+
     }
 
 }
@@ -96,6 +110,37 @@ void Particle_System::reset()
 {
     for(size_t i = 0; i < N_particles; i++)
     {
-        p[i].pos.set( ofRandom(-2,2), ofRandom(-2,2));
+        ofVec2f aux = ofVec2f(ofRandom(-2,2), ofRandom(-2,2));
+        p[i].pos0 = aux;
+        p[i].pos = aux;
+
     }
+}
+void Particle_System::clear()
+{
+    for(size_t i = 0; i < N_particles; i++)
+    {
+        p[i].life = 0;
+    }
+}
+void Particle_System::trajectories(bool dTraj)
+{
+    if(dTraj)
+        for(size_t i = 0; i < N_traj; i=i+2)
+        {
+            p[i].t_dir = 1;
+            p[i+1].t_dir = -1;
+            p[i].pos = p[i].pos0;
+            p[i+1].pos = p[i].pos0;
+            p[i].dTraj = true;
+            p[i+1].dTraj = true;
+        }
+    else
+        for(size_t i = 0; i < N_traj; i++)
+        {
+            p[i].dTraj = false;
+            p[i].t_dir = 1;
+        }
+
+
 }

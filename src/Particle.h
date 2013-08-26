@@ -19,11 +19,17 @@
         bool is_dead();
         void update();
 
-        ofVec2f pos, vel;
+        ofVec2f pos, vel, pos0;
+        vector <ofVec2f*> traj;
+        size_t tr_p, max_tr_p,tr_l;
+        bool dTraj;
 
-        int life,life0;
+        int life;
 
         float t,tbuf,Xbuf,Ybuf,x,y,kx1,kx2,kx3,kx4,ky1,ky2,ky3,ky4,dt,dX,dY;
+
+        float max_t;
+        int t_dir;
 
         ofVec2f co[7],in;
 

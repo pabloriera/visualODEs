@@ -32,7 +32,7 @@ public:
 
     vector<ofFbo> fbo;
     size_t fbo_active;
-    bool dFBO;
+    bool dFBO,dTraj;
 
 };
 

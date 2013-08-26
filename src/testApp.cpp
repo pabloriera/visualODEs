@@ -10,12 +10,12 @@ void testApp::setup(){
 
     receiver.setup(PORT);
 
-    N_particles = 10000;
+    N_particles = 5000;
     system.setup(N_particles);
     visual.setup(&system);
 
     drop = 0;
-    guiOn=false;
+    guiOn=true;
 
     //Gui setup
     controls = ofxGui::Instance(this);
@@ -126,8 +126,10 @@ void testApp::draw(){
     verdana.drawString(drawStringY,20,ofGetHeight()-30);
 
     //Gui Draw
-    if(guiOn)
-        controls->draw();
+    ofPushMatrix();
+        if(guiOn)
+            controls->draw();
+    ofPopMatrix();
 }
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
@@ -135,7 +137,7 @@ void testApp::keyPressed(int key){
     if(key=='r')
         system.reset();
 
-    if(key=='c')
+    if(key=='g')
         guiOn=!guiOn;
 
     if(key=='o')
@@ -169,6 +171,17 @@ void testApp::keyPressed(int key){
     }
     if(key=='f')
         visual.dFBO = !visual.dFBO;
+
+    if(key==OF_KEY_BACKSPACE)
+    {
+        system.clear();
+    }
+    if(key=='t')
+    {
+        visual.dTraj = !visual.dTraj;
+        system.trajectories(visual.dTraj);
+    }
+
 }
 
 //--------------------------------------------------------------

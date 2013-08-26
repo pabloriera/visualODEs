@@ -15,9 +15,11 @@ public:
     void OscMessage(ofxOscMessage* m);
     void update_parameters();
     void update();
+    void clear();
+    void trajectories(bool dTraj);
     void reset();
 
-    size_t N_particles;
+    size_t N_particles, N_traj;
 
     Particle *p;
     ofVec2f co[7];

@@ -4,31 +4,40 @@
 	<File name="config.make" open="0" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/Particle.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="97" topLine="0" />
+	<File name="src/Particle.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="399" topLine="43" />
 	</File>
-	<File name="src/Particle.h" open="1" top="0" tabpos="2">
-		<Cursor position="66" topLine="0" />
+	<File name="src/Particle.h" open="1" top="0" tabpos="3">
+		<Cursor position="565" topLine="21" />
 	</File>
-	<File name="src/Particle_System.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="304" topLine="0" />
+	<File name="src/Particle_System.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="900" topLine="31" />
 	</File>
-	<File name="src/Particle_System.h" open="1" top="0" tabpos="1">
-		<Cursor position="373" topLine="0" />
+	<File name="src/Particle_System.h" open="1" top="0" tabpos="2">
+		<Cursor position="390" topLine="9" />
 	</File>
-	<File name="src/gui.h" open="1" top="1" tabpos="3">
-		<Cursor position="2900" topLine="49" />
+	<File name="src/Visualization.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="3294" topLine="117" />
+	</File>
+	<File name="src/Visualization.h" open="1" top="0" tabpos="9">
+		<Cursor position="492" topLine="17" />
+	</File>
+	<File name="src/gui.h" open="1" top="0" tabpos="5">
+		<Cursor position="2050" topLine="70" />
 	</File>
 	<File name="src/main.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="414" topLine="0" />
 	</File>
-	<File name="src/testApp.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="483" topLine="2" />
+	<File name="src/testApp.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="218" topLine="18" />
 	</File>
-	<File name="src/testApp.h" open="1" top="0" tabpos="5">
+	<File name="src/testApp.h" open="1" top="0" tabpos="7">
 		<Cursor position="1147" topLine="20" />
 	</File>
 	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiSlider.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3367" topLine="107" />
+	</File>
+	<File name="../../../../usr/local/of_v0.7.4_linux64_release/addons/ofxGui/src/ofxGuiTypes.h" open="1" top="0" tabpos="10">
+		<Cursor position="5632" topLine="297" />
 	</File>
 </CodeBlocks_layout_file>
