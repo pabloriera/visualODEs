@@ -16,6 +16,7 @@ void testApp::setup(){
 
     drop = 0;
     guiOn=true;
+    dUpdate = true;
 
     //Gui setup
     controls = ofxGui::Instance(this);
@@ -73,7 +74,9 @@ void testApp::update(){
 
 
     visual.update();
-    system.update();
+
+    if(dUpdate)
+        system.update();
 
 }
 
@@ -130,9 +133,13 @@ void testApp::draw(){
         if(guiOn)
             controls->draw();
     ofPopMatrix();
+
+    ofSetWindowTitle(ofToString(ofGetFrameRate()));
 }
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+
+    //cout << key << endl;
 
     if(key=='r')
         system.reset();
@@ -159,7 +166,7 @@ void testApp::keyPressed(int key){
 
     if(key=='1')
     {
-        visual.fbo_active=1;
+        visual.fbo_active=0;
     }
     if(key=='2')
     {
@@ -167,10 +174,13 @@ void testApp::keyPressed(int key){
     }
     if(key=='3')
     {
-        visual.fbo_active=1;
+        visual.fbo_active=2;
     }
     if(key=='f')
         visual.dFBO = !visual.dFBO;
+
+    if(key=='v')
+        visual.fbo_state[visual.fbo_active] = !visual.fbo_state[visual.fbo_active];
 
     if(key==OF_KEY_BACKSPACE)
     {
@@ -181,6 +191,14 @@ void testApp::keyPressed(int key){
         visual.dTraj = !visual.dTraj;
         system.trajectories(visual.dTraj);
     }
+
+
+    if(key==32)
+    {
+        dUpdate=!dUpdate;
+
+    }
+
 
 }
 

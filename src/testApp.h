@@ -36,6 +36,7 @@
             size_t drop;
 
             bool guiOn;
+            bool dUpdate;
 
             ofxOscReceiver receiver;
 

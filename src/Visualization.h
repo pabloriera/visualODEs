@@ -31,8 +31,12 @@ public:
     float maxVel;
 
     vector<ofFbo> fbo;
+    vector<bool> fbo_state;
+
     size_t fbo_active;
     bool dFBO,dTraj;
+
+    size_t N_fbos;
 
 };
 
